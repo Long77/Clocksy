@@ -51,12 +51,13 @@ export const HomeContents = () =>
             
             <div className="col-md-4">
                 <h2>Schedule your energy, let us take care of your time!</h2>
-                <p>Stably has two modes of time-tracking:
+                <p>Stably has two modes of time-tracking: Pomodoro and Standard
                 <br/>
-                1. The Standard timer counts your minutes as long as you want it to, and suggests breaks as you go.
+                1. For short bursts or time-sensitive duties, use the Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
                 <br/>
-                2. For short bursts or time-sensitive duties, we've also included a built-in Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
-                <br/></p>
+                2. The Standard timer simply counts your minutes as long as you want it to, and suggests breaks as you go.
+                <br/>
+                <u>Both modes allow you to track billable and non-billable hours at the flip of a switch.</u></p>
                 <p><b>With every completed session, Stably learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
