@@ -15,9 +15,9 @@ export const Nav = ({includeLogin}) =>
         <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar">Home</span>
-            <span className="icon-bar">About</span>
-            <span className="icon-bar">Register</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
             </button>
             <a className="navbar-brand" href="#">Stably.us</a>
         </div>
@@ -63,13 +63,11 @@ export const HomeContents = () =>
 
             <div className="col-md-4">
                 <h2>Conquer your Wanderlust</h2>
-                <p>Coming Soon: Stably will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
+                <p><b>Coming Soon:</b> Stably will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
-
         <hr />
-
         <footer>
         <p>&copy; 2016 Stably, Inc. All Rights Reserved</p>
         </footer>
