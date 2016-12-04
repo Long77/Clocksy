@@ -19,7 +19,7 @@ export const Nav = ({includeLogin}) =>
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">Project name</a>
+            <a className="navbar-brand" href="#">Stably.us</a>
         </div>
         <div id="navbar" className="navbar-collapse collapse">
             {includeLogin ? <LoginForm /> : null}
@@ -30,9 +30,12 @@ export const Nav = ({includeLogin}) =>
 export const Jumbotron = () => 
     <div className="jumbotron">
         <div className="container">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <hr/>
+            <h1>Welcome to Stably!</h1>
+            <p>The app that keeps you on track.</p>
+            <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones and rewards.
+            If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
+            <p><a className="btn btn-primary btn-lg" href="#" role="button">Get Started! &raquo;</a></p>
         </div>
     </div>
 
@@ -40,20 +43,28 @@ export const HomeContents = () =>
     <div className="container">
         <div className="row">
             <div className="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <h2>What does Stably do?</h2>
+                <p>Stably has the potential to enhance your awareness, dexterity, and productivity while using the computer.
+                Perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
+                <p><b> Wherever you go, whatever you do with your machine, Stably can go the distance with you.</b></p>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
             
             <div className="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <h2>Schedule your energy, let us take care of your time!</h2>
+                <p>Stably has two modes of time-tracking:
+                <br/>
+                1. The Standard timer counts your minutes as long as you want it to, and suggests breaks as you go.
+                <br/>
+                2. For short bursts or time-sensitive duties, we've also included a built-in Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
+                <br/>
+                With every completed session, Stably learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</p>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
 
             <div className="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                <h2></h2>
+                <p></p>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
@@ -61,6 +72,6 @@ export const HomeContents = () =>
         <hr />
 
         <footer>
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; 2016 Stably, Inc. All Rights Reserved</p>
         </footer>
     </div>
