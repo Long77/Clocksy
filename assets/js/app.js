@@ -44,6 +44,21 @@ const Home = () =>
 const Login = () => 
     <Layout includeLogin={true}>
         <div>Login</div>
+        <Jumbotron />
+        <HomeContents />
+    </Layout>
+
+const Register = () => 
+    <Layout>
+        <Jumbotron />
+        <form>
+        </form>
+    </Layout>
+
+const TimerScreen = () =>
+    <Layout>
+        <Jumbotron />
+        
     </Layout>
 
 const reactApp = () => 
@@ -51,6 +66,8 @@ const reactApp = () =>
     <Router history={hashHistory}>
         <Route path="/" component={Home}/>
         <Route path="/login" component={Login}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/timerscreen" component={TimerScreen}/>
     </Router>,
     document.querySelector('.app'))
 

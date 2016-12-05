@@ -46,7 +46,7 @@ export const HomeContents = () =>
                 <p>Stably has the potential to enhance your awareness, dexterity, and productivity while using the computer.
                 Perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
                 <p><b> Wherever you go, whatever you do with your machine, Stably can go the distance with you.</b></p>
-                <p><a className="btn btn-default" href="#" role="button">Find Out How &raquo;</a></p>
+                <p><a className="btn btn-default" href="Instructions" role="button">Find Out How &raquo;</a></p>
             </div>
             
             <div className="col-md-4">
@@ -68,8 +68,10 @@ export const HomeContents = () =>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
-        <hr />
+   
+
+    <hr/>
         <footer>
-        <p>&copy; 2016 Stably, Inc. All Rights Reserved</p>
-        </footer>
-    </div>
+        <p>&copy; 2016 Stably. All Rights Reserved</p>
+        </footer>   
+ </div>

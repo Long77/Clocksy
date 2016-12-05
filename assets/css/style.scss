@@ -24,6 +24,7 @@
     }
 }
 
+
 @define-mixin grid_r $col, $width {
         @media (min-width: $(width)px) {
                 .grid-$(col)-$(width) {
