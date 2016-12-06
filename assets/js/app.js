@@ -43,7 +43,6 @@ const Home = () =>
 
 const Login = () => 
     <Layout includeLogin={true}>
-        <div>Login</div>
         <Jumbotron />
         <HomeContents />
     </Layout>

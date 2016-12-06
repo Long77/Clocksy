@@ -34,7 +34,7 @@ export const Jumbotron = () =>
             <p>The app that keeps you on track.</p>
             <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones and rewards.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
-            <p><a className="btn btn-primary btn-lg" href="#/register" role="button">LogIn or Register Here! &raquo;</a></p>
+            <p><a className="btn btn-primary btn-lg" href="#" role="button">Login or Register Here! &raquo;</a></p>
         </div>
     </div>
 
@@ -68,7 +68,6 @@ export const HomeContents = () =>
                 <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
-   
 
     <hr/>
         <footer>
