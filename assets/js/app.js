@@ -4,7 +4,7 @@ import fetch from "isomorphic-fetch"
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import { Router, Route, Link, browserHistory, hashHistory } from 'react-router'
-import { Nav, Jumbotron, HomeContents } from './components'
+import { Nav, Jumbotron, HomeContents, Timer } from './components'
 import * as Boot from 'react-bootstrap' // read up @ https://react-bootstrap.github.io/components.html
 
 console.log(Boot) // what hast thou provided?
@@ -29,6 +29,10 @@ const post = (url, data) =>
     .then(r => r.json())
 // ----------------
 
+/*
+Build ALL the THINGS!
+*/
+
 const Layout = ({children, includeLogin}) => 
     <div>
         <Nav includeLogin={includeLogin}/>
@@ -36,27 +40,46 @@ const Layout = ({children, includeLogin}) =>
     </div>
 
 const Home = () => 
-    <Layout>
-        <Jumbotron />
-        <HomeContents />
-    </Layout>
+    <div>
+        <Nav />
+        <Layout includeLogin={true}>
+            <Jumbotron />
+            <HomeContents />
+        </Layout>
+    </div>
 
 const Login = () => 
-    <Layout includeLogin={true}>
-        <Jumbotron />
-        <HomeContents />
-    </Layout>
+    <div>
+        <Layout includeLogin={true}>
+            <Jumbotron />
+        </Layout>
+    </div>
 
 const Register = () => 
-    <Layout>
-        <Jumbotron />
-        <form>
-        </form>
-    </Layout>
+    <div>
+        <Nav />
+        <Layout>
+            <form>
+            </form>
+        </Layout>
+    </div>
 
 const TimerScreen = () =>
+    <div>
+        <Nav />
+        <Layout>
+        <Timer />
+        </Layout>
+    </div>
+
+const Dashboard = () =>
+    <div>
     <Layout>
-        <Jumbotron />
+        </Layout>
+    </div>
+
+const Instructions = () =>
+    <Layout>
         
     </Layout>
 
@@ -67,6 +90,8 @@ const reactApp = () =>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
         <Route path="/timerscreen" component={TimerScreen}/>
+        <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/instructions" component={Instructions}/>
     </Router>,
     document.querySelector('.app'))
 

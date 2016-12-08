@@ -52,27 +52,7 @@ public class Session : HasId
     
     public class TimeWorked
     {
-        //Create a Timespan object and display its value.
-        static void CreateTimeSpan ( int hours, int minutes, int seconds)
-        {
-            TimeSpan elapsedTime = 
-                new TimeSpan (hours, minutes, seconds);
-                
-                //Format the constructor for display.
-            string ctor = String.Format( "TimeSpan( {0}, {1}, {2})",
-                hours, minutes, seconds);
-
-                //Display the constructor and its value.
-            Console.WriteLine( "{0, -37}{1,16}",
-                ctor, elapsedTime.ToString());
-        }
-
-        static void TimeCounter()
-        {
-            Console.WriteLine();
-            Console.WriteLine( "{0,-37}{1,16}", "Constructor", "Value" );
-            Console.WriteLine( "{0,-37}{1,16}", "-----------", "-----" );
-        }
+       //foo
     }
 
     // public class BreakTime {

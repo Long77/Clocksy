@@ -6,7 +6,7 @@ export const LoginForm = () =>
         <div className="form-group">
             <input type="password" placeholder="Password" className="form-control" />
         </div>
-        <button type="submit" className="btn btn-success">Sign in</button>
+        <button type="submit" className="btn btn-success"> Go! </button>
     </form>
 
 export const Nav = ({includeLogin}) => 
@@ -34,7 +34,18 @@ export const Jumbotron = () =>
             <p>The app that keeps you on track.</p>
             <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones and rewards.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
-            <p><a className="btn btn-primary btn-lg" href="#" role="button">Login or Register Here! &raquo;</a></p>
+            <p><a className="btn btn-primary btn-lg" href="#/register" role="button">Login or Register Here! &raquo;</a></p>
+        </div>
+    </div>
+
+export const Timer = () =>
+    <div className="timer">
+        <div className="comtainer">
+            <h2>Timer Settings</h2>
+            <p>Choose your workflow method below. You will then be able to customize your session.</p>
+            <p><a className= "btn btn-warning btn-lg" href ="#/timerscreen/pomodoro" role="button">Pomodoro Timer</a></p>
+            <p><a className= "btn btn-success btn-lg" href ="#/timerscreen/tasktimer" role="button">Traditional Timer</a></p>
+            <p>Something something</p>
         </div>
     </div>
 
@@ -46,7 +57,7 @@ export const HomeContents = () =>
                 <p>Stably has the potential to enhance your awareness, dexterity, and productivity while using the computer.
                 Perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
                 <p><b> Wherever you go, whatever you do with your machine, Stably can go the distance with you.</b></p>
-                <p><a className="btn btn-default" href="Instructions" role="button">Find Out How &raquo;</a></p>
+                <p><a className="btn btn-info" href="#" role="button">Find Out How &raquo;</a></p>
             </div>
             
             <div className="col-md-4">
@@ -59,18 +70,20 @@ export const HomeContents = () =>
                 <br/>
                 <u>Both modes allow you to track billable and non-billable hours at the flip of a switch.</u></p>
                 <p><b>With every completed session, Stably learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
-                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <p><a className="btn btn-info" href="#/instructions" role="button"> Get Started &raquo;</a></p>
             </div>
 
             <div className="col-md-4">
                 <h2>Conquer your Wanderlust</h2>
                 <p><b>Coming Soon:</b> Stably will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
-                <p><a className="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <p><a className="btn btn-success" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
 
     <hr/>
         <footer>
-        <p>&copy; 2016 Stably. All Rights Reserved</p>
+        <div className="footer">
+            <p>&copy; 2016 Stably. All Rights Reserved</p>
+        </div>
         </footer>   
  </div>
