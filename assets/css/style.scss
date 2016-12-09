@@ -24,7 +24,6 @@
     }
 }
 
-
 @define-mixin grid_r $col, $width {
         @media (min-width: $(width)px) {
                 .grid-$(col)-$(width) {
@@ -41,7 +40,7 @@
 @mixin grid_r 6, 1000;
 
 body {
-    color: white;
+    color: navajowhite;
     background-color :black;
     padding-top: 50px;
 }
@@ -58,9 +57,22 @@ body {
 
 .logingroup {
     padding-left: 15px;
-    padding-top: 50px;
-    width: 450px;
-    height: 250px;
+    padding-top: 40px;
+    width: 50%;
+    max-width: 450px;
+    height: 200px;
+    border-radius: 5%;
+    color: black;
+    background-color: darkgreen;
+    text-align: center;
+}
+
+.registergroup {
+    padding-left: 15px;
+    padding-top: 40px;
+    width: 50%;
+    max-width: 450px;
+    height: 200px;
     border-radius: 5%;
     color: black;
     background-color: dodgerblue;
@@ -72,6 +84,9 @@ body {
 }*/
 
 .lgnbtn {
+    padding-top: 10px;
+}
+.regbtn {
     padding-top: 10px;
 }
 

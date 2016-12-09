@@ -6,7 +6,7 @@ export const LoginForm = () =>
         <div className="form-group">
             <input type="password" placeholder="Password" className="form-control" />
         </div>
-        <button type="submit" className="btn btn-success" href="#/dashboard"> Go! </button>
+        <button type="submit" className="btn btn-success" href="#/dashboard" role="button"> Go! </button>
     </form>
 
 export const Nav = ({includeLogin}) => 
@@ -37,7 +37,7 @@ export const Jumbotron = () =>
             <p><a className="btn btn-primary btn-lg" href="#/login" role="button">Login or Register Here! &raquo;</a></p>
         </div>
     </div>
-
+    
 export const JumboLogin = () => 
     <div className="jumbologin">
         <div className="container">        
@@ -51,6 +51,19 @@ export const JumboLogin = () =>
             <div className="form-group">
                 <input type="password" placeholder="Password" className="form-control" />
                 <div className="lgnbtn"><p><a className="btn btn-success btn-lg" href="#/dashboard" role="button">Login &raquo;</a></p></div>
+            </div>
+        </div>
+        <div className="container">
+        <hr/>     
+            <p>Not a registered user? Start Here.</p>            
+        </div>
+        <div className="registergroup">
+            <div className="form-group">
+                <input type="text" placeholder="Email" className="form-control" />
+            </div>
+            <div className="form-group">
+                <input type="password" placeholder="Password" className="form-control" />
+                <div className="regbtn"><p><a className="btn btn-success btn-lg" href="#/register" role="button">Register &raquo;</a></p></div>
             </div>
         </div>
     </div>
