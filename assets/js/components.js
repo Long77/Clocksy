@@ -38,16 +38,60 @@ export const Jumbotron = () =>
         </div>
     </div>
 
-export const Timer = () =>
-    <div className="timer">
-        <div className="comtainer">
-            <h2>Timer Settings</h2>
-            <p>Choose your workflow method below. You will then be able to customize your session.</p>
-            <p><a className= "btn btn-warning btn-lg" href ="#/timerscreen/pomodoro" role="button">Pomodoro Timer</a></p>
-            <p><a className= "btn btn-success btn-lg" href ="#/timerscreen/tasktimer" role="button">Traditional Timer</a></p>
-            <p>Something something</p>
+export class Timer extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            interval: null,
+            elapsedSeconds: 0,
+            timestamp: "00:00:00"
+        }
+    }
+
+    toggleTimer(){
+        const {interval, elapsedSeconds} = this.state
+
+        if(!interval){
+            var i = setInterval(() => {
+                let {elapsedSeconds} = this.state
+                elapsedSeconds++;
+                var hours = Math.floor(elapsedSeconds/60/60)
+                var mins = Math.floor(elapsedSeconds/60)
+                var secs = Math.floor(elapsedSeconds%60)
+                if(hours < 10) hours = "0" + hours
+                if(mins < 10) mins = "0" + mins
+                if(secs < 10) secs = "0" + secs
+                this.setState({elapsedSeconds, timestamp: hours + ":" + mins + ":" + secs})
+            }, 1000);
+
+            this.setState({
+                interval: i
+            })
+        } else {
+            clearInterval(interval)
+            this.setState({interval: null})
+        }
+    }
+
+    render(){
+        return <div className="timer">
+            <div className="comtainer">
+                <h2>Timer Settings</h2>
+                <p>Choose your workflow method below. You will then be able to customize your session.</p>
+                <p><a className= "btn btn-warning btn-lg" href ="#/timerscreen/pomodoro" role="button">Pomodoro Timer</a></p>
+                <p><a className= "btn btn-success btn-lg" href ="#/timerscreen/tasktimer" role="button">Traditional Timer</a></p>
+                <p>Something something</p>
+
+                <button id="startPause" onClick={e => this.toggleTimer()}>
+                    { this.state.interval ? "Stop" : "Start" }
+                </button>
+
+                <div id="output">{this.state.timestamp}</div>
+            </div>
         </div>
-    </div>
+    }
+}
 
 export const HomeContents = () =>
     <div className="container">
@@ -66,7 +110,7 @@ export const HomeContents = () =>
                 <br/>
                 1. For short bursts or time-sensitive duties, use the Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
                 <br/>
-                2. The Standard timer simply counts your minutes as long as you want it to, and suggests breaks as you go.
+                2. The Standard Tasktimer simply counts your minutes as long as you want it to, and suggests breaks as you go.
                 <br/>
                 <u>Both modes allow you to track billable and non-billable hours at the flip of a switch.</u></p>
                 <p><b>With every completed session, Stably learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
