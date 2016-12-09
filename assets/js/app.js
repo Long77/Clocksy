@@ -4,7 +4,7 @@ import fetch from "isomorphic-fetch"
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import { Router, Route, Link, browserHistory, hashHistory } from 'react-router'
-import { Nav, Jumbotron, HomeContents, Timer } from './components'
+import { Nav, Jumbotron, JumboLogin, HomeContents, Timer } from './components'
 import * as Boot from 'react-bootstrap' // read up @ https://react-bootstrap.github.io/components.html
 
 console.log(Boot) // what hast thou provided?
@@ -50,8 +50,8 @@ const Home = () =>
 
 const Login = () => 
     <div>
-        <Layout includeLogin={true}>
-            <Jumbotron />
+        <Layout includeLogin={false}>
+            <JumboLogin />
         </Layout>
     </div>
 

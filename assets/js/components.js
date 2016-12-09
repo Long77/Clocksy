@@ -6,7 +6,7 @@ export const LoginForm = () =>
         <div className="form-group">
             <input type="password" placeholder="Password" className="form-control" />
         </div>
-        <button type="submit" className="btn btn-success"> Go! </button>
+        <button type="submit" className="btn btn-success" href="#/dashboard"> Go! </button>
     </form>
 
 export const Nav = ({includeLogin}) => 
@@ -15,9 +15,9 @@ export const Nav = ({includeLogin}) =>
         <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+            <span className="icon-bar">About</span>
+            <span className="icon-bar">Contact</span>
+            <span className="icon-bar">Coming Soon</span>
             </button>
             <a className="navbar-brand" href="#">Stably.us</a>
         </div>
@@ -34,7 +34,24 @@ export const Jumbotron = () =>
             <p>The app that keeps you on track.</p>
             <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones and rewards.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
-            <p><a className="btn btn-primary btn-lg" href="#/register" role="button">Login or Register Here! &raquo;</a></p>
+            <p><a className="btn btn-primary btn-lg" href="#/login" role="button">Login or Register Here! &raquo;</a></p>
+        </div>
+    </div>
+
+export const JumboLogin = () => 
+    <div className="jumbologin">
+        <div className="container">        
+            <h1>Welcome Back!</h1>
+            <p>Let's get to work- but first, Credentials! Let's see 'em.</p>            
+        </div>
+        <div className="logingroup">
+            <div className="form-group">
+                <input type="text" placeholder="Email" className="form-control" />
+            </div>
+            <div className="form-group">
+                <input type="password" placeholder="Password" className="form-control" />
+                <div className="lgnbtn"><p><a className="btn btn-success btn-lg" href="#/dashboard" role="button">Login &raquo;</a></p></div>
+            </div>
         </div>
     </div>
 

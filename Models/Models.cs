@@ -42,6 +42,8 @@ public class Session : HasId
     public DateTime Date  { get; set; }
     public DateTime EndTime { get; set; }
     public double TotalTime { get; set; }
+    public double BillableTime { get; set; }
+    public double BreakTime { get; set; }
 }
 
 public class Time : HasId
