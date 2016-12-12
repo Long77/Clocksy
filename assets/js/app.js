@@ -64,18 +64,12 @@ const Register = () =>
         </Layout>
     </div>
 
-const TimerScreen = () =>
-    <div>
-        <Nav />
-        <Layout>
-        <Timer />
-        </Layout>
-    </div>
-
 const Dashboard = () =>
     <div>
-    <Layout>
-        </Layout>
+        <Nav />
+            <Layout>
+                <Timer />
+            </Layout>
     </div>
 
 const Instructions = () =>
@@ -89,7 +83,6 @@ const reactApp = () =>
         <Route path="/" component={Home}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
-        <Route path="/timerscreen" component={TimerScreen}/>
         <Route path="/dashboard" component={Dashboard}/>
         <Route path="/instructions" component={Instructions}/>
     </Router>,

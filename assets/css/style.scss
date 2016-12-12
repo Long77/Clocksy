@@ -47,9 +47,11 @@ body {
 
 .timer {
     position: relative;
+    display: inline-block;
     padding-left: 20px;
-    width: 450px;
-    height: 250px;
+    width: 550px;
+    max-width: 550px;
+    height: 350px;
     border-radius: 5%;
     color: black;
     background-color: dodgerblue;
@@ -63,8 +65,30 @@ body {
     height: 200px;
     border-radius: 5%;
     color: black;
-    background-color: darkgreen;
+    background-color: seagreen;
     text-align: center;
+}
+
+#output {
+    margin-top: 2px;
+    padding-left: 3px;
+    color: white;
+    width: 16%;
+    height: 25px;
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 15%;
+
+}
+#breakOutput {
+    margin-top: 2px;
+    padding-left: 3px;
+    color: gold;
+    width: 16%;
+    height: 25px;
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 15%;
 }
 
 .registergroup {
@@ -78,10 +102,6 @@ body {
     background-color: dodgerblue;
     text-align: center;
 }
-
-/*.icon-bar {
-    color: grey;
-}*/
 
 .lgnbtn {
     padding-top: 10px;

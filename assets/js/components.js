@@ -12,18 +12,18 @@ export const LoginForm = () =>
 export const Nav = ({includeLogin}) => 
     <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
-        <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar">About</span>
-            <span className="icon-bar">Contact</span>
-            <span className="icon-bar">Coming Soon</span>
-            </button>
-            <a className="navbar-brand" href="#">Stably.us</a>
-        </div>
-        <div id="navbar" className="navbar-collapse collapse">
-            {includeLogin ? <LoginForm /> : null}
-        </div>
+            <div className="navbar-header">
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar">About</span>
+                <span className="icon-bar">Contact</span>
+                <span className="icon-bar">Coming Soon</span>
+                </button>
+                <a className="navbar-brand" href="#">Stably.us</a>
+            </div>
+            <div id="navbar" className="navbar-collapse collapse">
+                {includeLogin ? <LoginForm /> : null}
+            </div>
         </div>
     </nav>
 
@@ -75,7 +75,9 @@ export class Timer extends React.Component {
         this.state = {
             interval: null,
             elapsedSeconds: 0,
-            timestamp: "00:00:00"
+            breakSeconds: 0,
+            timestamp: "00:00:00",
+            breaktimestamp: "00:00:00"
         }
     }
 
@@ -98,6 +100,33 @@ export class Timer extends React.Component {
             this.setState({
                 interval: i
             })
+
+        } else {
+            clearInterval(interval)
+            this.setState({interval: null})
+        }
+    }
+
+    toggleBreak(){
+        const {interval, breakSeconds} = this.state
+
+        if(!interval){
+            var j = setInterval(() => {
+                let {breakSeconds} = this.state
+                breakSeconds++;
+                var hours = Math.floor(breakSeconds/60/60)
+                var mins = Math.floor(breakSeconds/60)
+                var secs = Math.floor(breakSeconds%60)
+                if(hours < 10) hours = "0" + hours
+                if(mins < 10) mins = "0" + mins
+                if(secs < 10) secs = "0" + secs
+                this.setState({breakSeconds, breaktimestamp: hours + ":" + mins + ":" + secs})
+            }, 1000);
+
+            this.setState({
+                interval: j
+            })
+
         } else {
             clearInterval(interval)
             this.setState({interval: null})
@@ -106,18 +135,21 @@ export class Timer extends React.Component {
 
     render(){
         return <div className="timer">
-            <div className="comtainer">
+            <div className="container">
                 <h2>Timer Settings</h2>
-                <p>Choose your workflow method below. You will then be able to customize your session.</p>
-                <p><a className= "btn btn-warning btn-lg" href ="#/timerscreen/pomodoro" role="button">Pomodoro Timer</a></p>
-                <p><a className= "btn btn-success btn-lg" href ="#/timerscreen/tasktimer" role="button">Traditional Timer</a></p>
-                <p>Something something</p>
+                <p>Choose your timer method. You will then be able to customize your session.</p>
+                <p><a className= "btn btn-warning btn-lg" href ="#" role="button">Pomodoro Timer</a></p>
+                <p><a className= "btn btn-success btn-lg" href ="#" role="button">Traditional Timer</a></p>
 
-                <button id="startPause" onClick={e => this.toggleTimer()}>
-                    { this.state.interval ? "Stop" : "Start" }
+                <button id="startTimer" onClick={e => this.toggleTimer()}>
+                    { this.state.interval ? "Stop Timer" : "Start Timer" }
                 </button>
-
                 <div id="output">{this.state.timestamp}</div>
+
+                <button id="breakTimer" onClick={e => this.toggleBreak()}>
+                    {this.state.interval ? "Start Break" : "End Break"}
+                </button>
+                <div id="breakOutput">{this.state.breaktimestamp}</div>
             </div>
         </div>
     }
