@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 // Create Project Class Models
+// give it some logic through DB
 public class User : HasId
 {
     [Required]

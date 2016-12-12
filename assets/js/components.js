@@ -32,7 +32,7 @@ export const Jumbotron = () =>
         <div className="container">        
             <h1>Welcome to Stably!</h1>
             <p>The app that keeps you on track.</p>
-            <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones and rewards.
+            <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
             <p><a className="btn btn-primary btn-lg" href="#/login" role="button">Login or Register Here! &raquo;</a></p>
         </div>
@@ -68,12 +68,21 @@ export const JumboLogin = () =>
         </div>
     </div>
 
+// export class RegisForm extends React.Component {
+//     constructor(props){
+//         super(props)
+//     }
+    
+
+
+// }
 export class Timer extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
             interval: null,
+            breakinterval: null,
             elapsedSeconds: 0,
             breakSeconds: 0,
             timestamp: "00:00:00",
@@ -104,13 +113,17 @@ export class Timer extends React.Component {
         } else {
             clearInterval(interval)
             this.setState({interval: null})
+                if (interval)
+                {
+                    this.toggleBreak(this.state.breakinterval);
+                }
         }
     }
 
     toggleBreak(){
-        const {interval, breakSeconds} = this.state
+        const {breakinterval, breakSeconds} = this.state
 
-        if(!interval){
+        if(!breakinterval){
             var j = setInterval(() => {
                 let {breakSeconds} = this.state
                 breakSeconds++;
@@ -124,12 +137,12 @@ export class Timer extends React.Component {
             }, 1000);
 
             this.setState({
-                interval: j
+                breakinterval: j
             })
 
         } else {
-            clearInterval(interval)
-            this.setState({interval: null})
+            clearInterval(breakinterval)
+            this.setState({breakinterval: null})
         }
     }
 
@@ -147,7 +160,7 @@ export class Timer extends React.Component {
                 <div id="output">{this.state.timestamp}</div>
 
                 <button id="breakTimer" onClick={e => this.toggleBreak()}>
-                    {this.state.interval ? "Start Break" : "End Break"}
+                    {this.state.breakinterval ? "End Break" : "Start Break"}
                 </button>
                 <div id="breakOutput">{this.state.breaktimestamp}</div>
             </div>
