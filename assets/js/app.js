@@ -11,6 +11,7 @@ console.log(Boot) // what hast thou provided?
 
 // Utility methods
 // --------------
+
 const log = (...a) => console.log(...a)
 
 const get = (url) =>
@@ -73,9 +74,8 @@ const Dashboard = () =>
     </div>
 
 const Instructions = () =>
-    <Layout>
-        
-    </Layout>
+<Layout>
+</Layout>
 
 const reactApp = () => 
     render(

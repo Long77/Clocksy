@@ -72,9 +72,6 @@ export const JumboLogin = () =>
 //     constructor(props){
 //         super(props)
 //     }
-    
-
-
 // }
 export class Timer extends React.Component {
     constructor(props){
