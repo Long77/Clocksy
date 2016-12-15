@@ -14,12 +14,12 @@ console.log(Boot) // what hast thou provided?
 
 const log = (...a) => console.log(...a)
 
-const get = (url) =>
+export const get = (url) =>
     fetch(url, {credentials: 'same-origin'})
     .then(r => r.json())
     .catch(e => log(e))
 // post('/api/session', {...})
-const post = (url, data) => 
+export const post = (url, data) => 
     fetch(url, { 
         method: 'POST',
         credentials: 'same-origin',
@@ -30,7 +30,7 @@ const post = (url, data) =>
     .then(r => r.json())
 // ----------------
 
-get('/api/session').then(d => console.log(d))
+// get('/api/session').then(d => console.log(d))
 
 /*
 Build ALL the THINGS!

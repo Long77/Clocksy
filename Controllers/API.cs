@@ -16,5 +16,8 @@ public class ProjectController : CRUDController<Project> {
 
 [Route("/api/session")]
 public class SessionController : CRUDController<Session> {
-    public SessionController(IRepository<Session> r) : base(r){}
+    private DB db;
+    public SessionController(IRepository<Session> r, DB db) : base(r){
+        this.db = db;
+    }
 }

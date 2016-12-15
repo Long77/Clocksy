@@ -1,3 +1,5 @@
+import {get, post} from './app.js'
+
 export const LoginForm = () => 
     <form className="navbar-form navbar-right">
         <div className="form-group">
@@ -113,7 +115,7 @@ export class RegisForm extends React.Component {
                 value: this.props.value,
                 }),
 
-                <button type="submit" className="btn btn-success" href="#/dashboard" role="button"> Go! </button>
+                <button type="submit" className="btn btn-warning" href="#/dashboard" role="button"> Go! </button>
                 )
         }
 }
@@ -155,10 +157,25 @@ export class Timer extends React.Component {
         } else {
             clearInterval(interval)
             this.setState({interval: null})
-                if (interval)
-                {
-                    this.toggleBreak(this.state.breakinterval);
-                }
+            if (interval)
+            {
+                this.toggleBreak(this.state.breakinterval);
+            }
+            var now = new Date(),
+                startedAt = new Date(now - 1000*this.state.elapsedSeconds) 
+
+            post('/api/session', {
+                "projectId": 1,
+                "name": "random session",
+                "startTime": startedAt.toISOString(),
+                // "date": now.toISOString(),
+                "endTime": now.toISOString(),
+                "totalTime": 0,
+                // "billableTime": 0,
+                "breakTime": 0
+            }).then(d => {
+                window.location.reload()
+            })
         }
     }
 
@@ -218,15 +235,19 @@ export class DashLayout extends React.Component {
             items: []
         }
     }
-    // componentDidMount(){
-    //     get('/api/session').then(sessions => {
-    //         session = sessions.reverse()
-    //         this.setState({items: sessions})
-    //     }).catch(e => log(e))
-    // }
+    componentDidMount(){
+        get('/api/session')
+            .then(sessions => {
+                sessions = sessions.reverse()
+                this.setState({items: sessions})
+            }).catch(e => console.log(e))
+    }
     render(){
         return <div className="grid grid-3-600">
-            {this.state.items}
+            {this.state.items.map(x => <p>
+                <span>{new Date(x.startTime).toLocaleString()}</span> to 
+                <span>{new Date(x.endTime).toLocaleString()}</span>
+            </p>)}
         </div>
     }
 }

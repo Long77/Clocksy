@@ -36,38 +36,38 @@ public class Session : HasId
 {
     [Required]
     public int Id { get; set; }
-    [Required]
     public int ProjectId { get; set; }
+    public Project Project {get;set;}
     public string Name {get; set; }
     public DateTime StartTime { get; set; }
-    public DateTime Date  { get; set; }
+    // public DateTime Date  { get; set; }
     public DateTime EndTime { get; set; }
-    public double TotalTime { get; set; }
-    public double BillableTime { get; set; }
-    public double BreakTime { get; set; }
+    // public double TotalTime { get; set; }
+    // public double BillableTime { get; set; }
+    // public double BreakTime { get; set; }
 }
 
-public class Time : HasId
-{
-    [Required]
-    public int Id { get; set; }
-    [Required]
-    public int SessionId {get; set; }
-    public double HourlyRate {get; set;}
-}
+// public class Time : HasId
+// {
+//     [Required]
+//     public int Id { get; set; }
+//     [Required]
+//     public int SessionId {get; set; }
+//     public double HourlyRate {get; set;}
+// }
 
 // declare the DbSet<T>'s of our DB context, thus creating the tables
 public partial class DB : IdentityDbContext<IdentityUser> {
     public DbSet<Project> Projects { get; set; }
-    public DbSet<Time> Times { get; set; }
+    // public DbSet<Time> Times { get; set; }
     public DbSet<Session> Sessions {get;set;}
 }
 // create a Repo<T> services
 public partial class Handler {
     public void RegisterRepos(IServiceCollection services){
-        Repo<Project>.Register(services, "Projects");
-        Repo<Time>.Register(services, "Times");
+        Repo<Project>.Register(services, "Projects",
+            d => d.Include(p => p.Sessions));
+        // Repo<Time>.Register(services, "Times");
         Repo<Session>.Register(services, "Sessions");
-           // d => d.Include(l => l.Projects));
     }
 }

@@ -29,6 +29,7 @@ public static class Seed
                 Name = "2nd Test Session",
                 StartTime = DateTime.Now,
                 EndTime = DateTime.Now.AddHours(5)
+                // BreakTime = 1600
             },
             new Session { 
                 Name = "3rd Test Session",

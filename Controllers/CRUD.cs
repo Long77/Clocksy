@@ -26,7 +26,7 @@ public abstract class CRUDController<T> : Controller where T: class, HasId
     }
 
     [HttpPost]
-    public IActionResult C([FromBody] T item) {
+    public virtual IActionResult C([FromBody] T item) {
         if(!ModelState.IsValid)
             return BadRequest(ModelState.ToErrorObject());
 
@@ -34,10 +34,10 @@ public abstract class CRUDController<T> : Controller where T: class, HasId
     }
 
     [HttpGet]
-    public IActionResult R() => Ok(r.Read());
+    public virtual IActionResult R() => Ok(r.Read());
 
     [HttpGet("{id}")]
-    public IActionResult R(int id) {
+    public virtual IActionResult R(int id) {
         var item = r.Read(id);
         if(item == null)
             return NotFound();
@@ -46,7 +46,7 @@ public abstract class CRUDController<T> : Controller where T: class, HasId
     }
 
     [HttpPut("{id}")]
-    public IActionResult U(int id, [FromBody] T item){
+    public virtual IActionResult U(int id, [FromBody] T item){
         if(item.Id != id || !ModelState.IsValid || !r.Update(item))
             return BadRequest();
 
@@ -54,7 +54,7 @@ public abstract class CRUDController<T> : Controller where T: class, HasId
     }
 
     [HttpDelete("{id}")]
-    public IActionResult D(int id){
+    public virtual IActionResult D(int id){
         T item = r.Delete(id);
         if(item == null)
             return NotFound();
