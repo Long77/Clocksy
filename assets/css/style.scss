@@ -46,18 +46,19 @@ body {
 }
 
 .timer {
-    position: relative;
     display: inline-block;
+    margin-bottom: 15px;
     padding-left: 20px;
     width: 550px;
-    max-width: 550px;
-    height: 350px;
+    max-width: 350px;
+    height: 240px;
     border-radius: 5%;
     color: black;
     background-color: dodgerblue;
 }
 
 .logingroup {
+    float: 50%;
     padding-left: 15px;
     padding-top: 40px;
     width: 50%;
@@ -71,21 +72,46 @@ body {
 
 #output {
     margin-top: 2px;
-    padding-left: 3px;
+    padding-left: 5px;
+    font-size: 3em;
     color: white;
-    width: 16%;
-    height: 25px;
+    width: 4.2em;
+    min-width: 4.2em;
+    height: 60px;
     background-color: black;
     border: 1px solid grey;
     border-radius: 15%;
 
 }
+.registerform {
+    padding-top: 20px;
+    width: 50%;
+    max-width: 600px;
+    height: 380px;
+    border-radius: 5%;
+    color: black;
+    background-color: dodgerblue;
+    text-align: center;
+
+}
+
+.registerform input {
+    background-color: black;
+    color: red;
+    margin: 10px;
+    font-size: 20px;
+    height: 30px;
+    width: 86%;
+}
+
 #breakOutput {
     margin-top: 2px;
-    padding-left: 3px;
+    padding-left: 5px;
+    font-size: 2.5em;
     color: gold;
-    width: 16%;
-    height: 25px;
+    width: 4.2em;
+    min-width: 4.2em;
+    height: 50px;
     background-color: black;
     border: 1px solid grey;
     border-radius: 15%;
@@ -112,6 +138,16 @@ body {
 
 .form-group {
     padding-right: 10px;
+}
+
+.sessionlog {
+    margin-top: 2px;
+    padding-left: 5px;
+    font-size: 1.5em;
+    color: green;
+    width: 100%;
+    height: 50px;
+    background-color: black
 }
 
 

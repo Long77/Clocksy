@@ -17,9 +17,9 @@ export const Nav = ({includeLogin}) =>
             <div className="navbar-header">
                 <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar">About</span>
-                <span className="icon-bar">Contact</span>
-                <span className="icon-bar">Coming Soon</span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
                 </button>
                 <a className="navbar-brand" href="#">Stably.us</a>
             </div>
@@ -52,23 +52,15 @@ export const JumboLogin = () =>
             </div>
             <div className="form-group">
                 <input type="password" placeholder="Password" className="form-control" />
-                <div className="lgnbtn"><p><a className="btn btn-success btn-lg" href="#/dashboard" role="button">Login &raquo;</a></p></div>
+                <div className="lgnbtn"><p><a className="btn btn-success btn-lg" href="#/dashboard" role="button"> Login &raquo;</a></p></div>
             </div>
         </div>
         <div className="container">
         <hr/>     
             <p>Not a registered user? Start Here.</p>            
         </div>
-        <div className="registergroup">
-            <div className="form-group">
-                <input type="text" placeholder="Email" className="form-control" />
+        <div className="regbtn"><p><a className="btn btn-success btn-lg" href="#/register" role="button"> Register Here! &raquo;</a></p></div>
             </div>
-            <div className="form-group">
-                <input type="password" placeholder="Password" className="form-control" />
-                <div className="regbtn"><p><a className="btn btn-success btn-lg" href="#/register" role="button">Register &raquo;</a></p></div>
-            </div>
-        </div>
-    </div>
 
 export class RegisForm extends React.Component {
     constructor(props){
@@ -78,7 +70,8 @@ export class RegisForm extends React.Component {
         }
     }
         render(){
-            return React.createElement('form', {className: 'RegisterForm'},
+            <p> "Just some quick information... We aren't fans of red tape."</p>
+            return React.createElement('form', {className: 'registerform'},
 
                 React.createElement('input', {
                 type: 'text',
@@ -115,7 +108,7 @@ export class RegisForm extends React.Component {
                 value: this.props.value,
                 }),
 
-                <button type="submit" className="btn btn-warning" href="#/dashboard" role="button"> Go! </button>
+                <div className="regbtn"><p><a className="btn btn-success btn-lg" href="#/login" role="button">Register &raquo;</a></p></div>
                 )
         }
 }
@@ -166,12 +159,10 @@ export class Timer extends React.Component {
 
             post('/api/session', {
                 "projectId": 1,
+                "sessionId": 1,
                 "name": "random session",
                 "startTime": startedAt.toISOString(),
-                // "date": now.toISOString(),
                 "endTime": now.toISOString(),
-                "totalTime": 0,
-                // "billableTime": 0,
                 "breakTime": 0
             }).then(d => {
                 window.location.reload()
@@ -208,10 +199,7 @@ export class Timer extends React.Component {
     render(){
         return <div className="timer">
             <div className="container">
-                <h2>Timer Settings</h2>
-                <p>Choose your timer method. You will then be able to customize your session.</p>
-                <p><a className= "btn btn-warning btn-lg" href ="#" role="button">Pomodoro Timer</a></p>
-                <p><a className= "btn btn-success btn-lg" href ="#" role="button">Traditional Timer</a></p>
+                <h2>Traditional Timer</h2>
 
                 <button id="startTimer" onClick={e => this.toggleTimer()}>
                     { this.state.interval ? "Stop Timer" : "Start Timer" }
@@ -243,13 +231,13 @@ export class DashLayout extends React.Component {
             }).catch(e => console.log(e))
     }
     render(){
-        return <div className="grid grid-3-600">
+        return <div className="sessionlog">
             {this.state.items.map(x => <p>
                 <span>{new Date(x.startTime).toLocaleString()}</span> to 
                 <span>{new Date(x.endTime).toLocaleString()}</span>
             </p>)}
         </div>
-    }
+        }
 }
 
 export const HomeContents = () =>

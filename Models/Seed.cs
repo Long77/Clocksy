@@ -23,7 +23,7 @@ public static class Seed
             new Session { 
                 Name = "1st Test Session",
                 StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(5)
+                EndTime = DateTime.Now.AddHours(3)
             },
             new Session { 
                 Name = "2nd Test Session",
@@ -31,16 +31,16 @@ public static class Seed
                 EndTime = DateTime.Now.AddHours(5)
                 // BreakTime = 1600
             },
-            new Session { 
-                Name = "3rd Test Session",
-                StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(5)
-            },
-            new Session { 
-                Name = "4th Test Session",
-                StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(5)
-            }
+            // new Session { 
+            //     Name = "3rd Test Session",
+            //     StartTime = DateTime.Now,
+            //     EndTime = DateTime.Now.AddHours(5)
+            // },
+            // new Session { 
+            //     Name = "4th Test Session",
+            //     StartTime = DateTime.Now,
+            //     EndTime = DateTime.Now.AddHours(5)
+            // }
         };
         db.Projects.Add(test);
         db.SaveChanges();
