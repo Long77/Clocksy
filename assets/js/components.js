@@ -75,10 +75,8 @@ export class RegisForm extends React.Component {
             items: []
         }
     }
-  
-        render() {
-            return (
-            React.createElement('form', {className: 'RegisterForm'},
+        render(){
+            return React.createElement('form', {className: 'RegisterForm'},
 
                 React.createElement('input', {
                 type: 'text',
@@ -91,7 +89,7 @@ export class RegisForm extends React.Component {
                 placeholder: 'Last Name (Required)',
                 value: this.props.value,
                 }),
-
+    
                 React.createElement('input', {
                 type: 'email',
                 placeholder: 'Email (Required)',
@@ -117,10 +115,8 @@ export class RegisForm extends React.Component {
 
                 <button type="submit" className="btn btn-success" href="#/dashboard" role="button"> Go! </button>
                 )
-            )
         }
 }
-
 
 export class Timer extends React.Component {
     constructor(props){
