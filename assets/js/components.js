@@ -68,11 +68,60 @@ export const JumboLogin = () =>
         </div>
     </div>
 
-// export class RegisForm extends React.Component {
-//     constructor(props){
-//         super(props)
-//     }
-// }
+export class RegisForm extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            items: []
+        }
+    }
+  
+        render() {
+            return (
+            React.createElement('form', {className: 'RegisterForm'},
+
+                React.createElement('input', {
+                type: 'text',
+                placeholder: 'First Name (Required)',
+                value: this.props.value,
+                }),
+
+                React.createElement('input', {
+                type: 'text',
+                placeholder: 'Last Name (Required)',
+                value: this.props.value,
+                }),
+
+                React.createElement('input', {
+                type: 'email',
+                placeholder: 'Email (Required)',
+                value: this.props.value,
+                }),
+
+                React.createElement('input', {
+                type: 'text',
+                placeholder: 'Select a UserName (Required)',
+                value: this.props.value,
+                }),
+
+                React.createElement('input', {
+                type: 'password',
+                placeholder: 'Password (Required)',
+                value: this.props.value,
+                }),
+
+                React.createElement('input', {
+                placeholder: 'Company (Optional)',
+                value: this.props.value,
+                }),
+
+                <button type="submit" className="btn btn-success" href="#/dashboard" role="button"> Go! </button>
+                )
+            )
+        }
+}
+
+
 export class Timer extends React.Component {
     constructor(props){
         super(props)
@@ -161,6 +210,27 @@ export class Timer extends React.Component {
                 </button>
                 <div id="breakOutput">{this.state.breaktimestamp}</div>
             </div>
+        </div>
+    }
+}
+
+export class DashLayout extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            items: []
+        }
+    }
+    // componentDidMount(){
+    //     get('/api/session').then(sessions => {
+    //         session = sessions.reverse()
+    //         this.setState({items: sessions})
+    //     }).catch(e => log(e))
+    // }
+    render(){
+        return <div className="grid grid-3-600">
+            {this.state.items}
         </div>
     }
 }

@@ -15,7 +15,34 @@ public static class Seed
             db.Database.EnsureCreated();
         }
         if(mustMigrate) db.Database.Migrate();
-        
+
+        Project test = new Project {
+            Name = "Test"
+        };
+        test.Sessions = new List<Session>{
+            new Session { 
+                Name = "1st Test Session",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(5)
+            },
+            new Session { 
+                Name = "2nd Test Session",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(5)
+            },
+            new Session { 
+                Name = "3rd Test Session",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(5)
+            },
+            new Session { 
+                Name = "4th Test Session",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(5)
+            }
+        };
+        db.Projects.Add(test);
+        db.SaveChanges();
         // if(db.Cards.Any() || db.CardLists.Any()) return;
         // db.Table.Add(...) / SaveChanges()
     }

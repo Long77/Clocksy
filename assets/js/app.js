@@ -4,7 +4,7 @@ import fetch from "isomorphic-fetch"
 import React, {Component} from 'react'
 import {render} from 'react-dom'
 import { Router, Route, Link, browserHistory, hashHistory } from 'react-router'
-import { Nav, Jumbotron, JumboLogin, HomeContents, Timer } from './components'
+import { Nav, Jumbotron, JumboLogin, RegisForm, HomeContents, Timer, DashLayout } from './components'
 import * as Boot from 'react-bootstrap' // read up @ https://react-bootstrap.github.io/components.html
 
 console.log(Boot) // what hast thou provided?
@@ -18,7 +18,7 @@ const get = (url) =>
     fetch(url, {credentials: 'same-origin'})
     .then(r => r.json())
     .catch(e => log(e))
-
+// post('/api/session', {...})
 const post = (url, data) => 
     fetch(url, { 
         method: 'POST',
@@ -29,6 +29,8 @@ const post = (url, data) =>
     .catch(e => log(e))
     .then(r => r.json())
 // ----------------
+
+get('/api/session').then(d => console.log(d))
 
 /*
 Build ALL the THINGS!
@@ -60,8 +62,7 @@ const Register = () =>
     <div>
         <Nav />
         <Layout>
-            <form>
-            </form>
+            <RegisForm />
         </Layout>
     </div>
 
@@ -70,6 +71,7 @@ const Dashboard = () =>
         <Nav />
             <Layout>
                 <Timer />
+                <DashLayout />                
             </Layout>
     </div>
 

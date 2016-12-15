@@ -60,12 +60,14 @@ public class Time : HasId
 public partial class DB : IdentityDbContext<IdentityUser> {
     public DbSet<Project> Projects { get; set; }
     public DbSet<Time> Times { get; set; }
+    public DbSet<Session> Sessions {get;set;}
 }
 // create a Repo<T> services
 public partial class Handler {
     public void RegisterRepos(IServiceCollection services){
         Repo<Project>.Register(services, "Projects");
         Repo<Time>.Register(services, "Times");
+        Repo<Session>.Register(services, "Sessions");
            // d => d.Include(l => l.Projects));
     }
 }
