@@ -22,14 +22,14 @@ public static class Seed
         test.Sessions = new List<Session>{
             new Session { 
                 Name = "1st Test Session",
-                StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(3)
+                StartTime = DateTime.Now.AddHours(-93),
+                EndTime = DateTime.Now.AddHours(-88)
             },
             new Session { 
                 Name = "2nd Test Session",
-                StartTime = DateTime.Now,
-                EndTime = DateTime.Now.AddHours(5)
-                // BreakTime = 1600
+                StartTime = DateTime.Now.AddHours(-70),
+                EndTime = DateTime.Now.AddHours(-63),
+                BreakTime = 28.28,
             },
             // new Session { 
             //     Name = "3rd Test Session",

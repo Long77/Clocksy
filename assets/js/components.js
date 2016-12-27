@@ -70,7 +70,6 @@ export class RegisForm extends React.Component {
         }
     }
         render(){
-            <p> "Just some quick information... We aren't fans of red tape."</p>
             return React.createElement('form', {className: 'registerform'},
 
                 React.createElement('input', {
@@ -231,11 +230,14 @@ export class DashLayout extends React.Component {
             }).catch(e => console.log(e))
     }
     render(){
+        
         return <div className="sessionlog">
             {this.state.items.map(x => <p>
-                <span>{new Date(x.startTime).toLocaleString()}</span> to 
-                <span>{new Date(x.endTime).toLocaleString()}</span>
+                <hr />
+                Session Start: <span>{new Date(x.startTime).toLocaleString()}</span> <br /> Session End: <span>{new Date(x.endTime).toLocaleString()}</span>, <br />
+                Break Time: <span>{new Date(x.breakTime).toLocaleString()}</span>
             </p>)}
+            <hr />
         </div>
         }
 }

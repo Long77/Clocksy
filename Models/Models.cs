@@ -37,14 +37,13 @@ public class Session : HasId
     [Required]
     public int Id { get; set; }
     public int ProjectId { get; set; }
-    public Project Project {get;set;}
+    public Project Project { get;set; }
     public string Name {get; set; }
     public DateTime StartTime { get; set; }
-    // public DateTime Date  { get; set; }
     public DateTime EndTime { get; set; }
-    // public double TotalTime { get; set; }
-    // public double BillableTime { get; set; }
-    // public double BreakTime { get; set; }
+    public double TotalTime { get; set; }
+    public double BillableTime { get; set; }
+    public double BreakTime { get; set; }
 }
 
 // public class Time : HasId

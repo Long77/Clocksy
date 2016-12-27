@@ -12,7 +12,7 @@ public class ProjectController : CRUDController<Project> {
             project.Name.ToLower().IndexOf(term.ToLower()) != -1
         )));
     }
-} 
+}
 
 [Route("/api/session")]
 public class SessionController : CRUDController<Session> {
