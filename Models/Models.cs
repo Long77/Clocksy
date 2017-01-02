@@ -23,6 +23,17 @@ public class User : HasId
     public string Password{ get; set; }
 
 }
+
+/*
+
+    -TODO List-
+*** Must figure out why breakTime is logging a date from 1969 instead of break time taken.
+** Also must address issue of Swagger's management of session data and making new projects in database.
+*** Figure out how the hell to use Heroku to give database a brain.
+
+More to Follow. Giggity.
+
+*/
 public class Project : HasId
 {
     [Required]
