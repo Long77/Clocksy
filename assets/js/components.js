@@ -28,6 +28,7 @@ export const Nav = ({includeLogin}) =>
             </div>
         </div>
     </nav>
+    // renamed the file. test test
 
 export const Jumbotron = () => 
     <div className="jumbotron">
@@ -252,7 +253,7 @@ export class DashLayout extends React.Component {
         }
 }
 /* Item 1 below under "Handle your business..."
-    Embed link in "read more about benefits of tomato timer" which shows how Pomodoro works.
+    Embed link in "read more about tomato timer" which shows how Pomodoro works.
 */
 export const HomeContents = () =>
     <div className="container">
