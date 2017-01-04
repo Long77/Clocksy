@@ -34,7 +34,7 @@ export const Jumbotron = () =>
         <div className="container">        
             <h1>Welcome to Clocksy!</h1>
             <p>The app that keeps you on track.</p>
-            <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones.
+            <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and elegantly manages your workflow data.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
             <p><a className="btn btn-primary btn-lg" href="#/login" role="button">Login or Register Here! &raquo;</a></p>
         </div>
@@ -271,7 +271,7 @@ export const HomeContents = () =>
                 <br/>
                 <br/>
             
-                1. For short bursts or time-sensitive duties, use the Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
+                1. For short bursts or time-sensitive duties, use the Pomodoro Timer ( Read about using the "Tomato" technique here ) allowing you to dictate your workflow.
                 <br/>
                 <br/>
                 2. The Standard Tasktimer simply counts your minutes as long as you want it to, and you can take breaks as you go.
@@ -283,8 +283,8 @@ export const HomeContents = () =>
             </div>
 
             <div className="col-md-4">
-                <h2>Conquer your Wanderlust</h2>
-                <p><b>Coming Soon:</b> Clocksy will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
+                <h2>Conquer your Wanderlust.</h2>
+                <p><b>Coming Soon:</b> Clocksy will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. When you work hard abroad, you can play hard abroad too. Stay tuned!</p>
                 <p><a className="btn btn-success btn-lg" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
