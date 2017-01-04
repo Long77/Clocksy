@@ -19,6 +19,7 @@ export const get = (url) =>
     .then(r => r.json())
     .catch(e => log(e))
 // post('/api/session', {...})
+
 export const post = (url, data) => 
     fetch(url, { 
         method: 'POST',

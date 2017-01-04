@@ -41,7 +41,7 @@
 
 body {
     color: navajowhite;
-    background-color :black;
+    background-color: black;
     padding-top: 50px;
 }
 
@@ -104,6 +104,20 @@ body {
     width: 86%;
 }
 
+#startTimer {
+    background-color: white;
+    width: 100px;
+    border-radius: 25%;
+    border: 2px solid black;
+}
+
+#breakTimer {
+    background-color: white;
+    width: 100px;
+    border-radius: 25%;
+    border: 2px solid black;
+}
+
 #breakOutput {
     margin-top: 2px;
     padding-left: 5px;
@@ -150,13 +164,13 @@ body {
     background-color: black
 }
 
-
 .btn btn-primary btn-lg {
-    color: blue; border: 1px solid black; background-color: red;
+    color: blue;
+    border: 1px solid black;    
 }
 
 .jumbotron {
-    background-color: dodgerblue;
+    background-color: skyblue;
     color: black;
     text-align: center;
 }

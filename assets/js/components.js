@@ -21,7 +21,7 @@ export const Nav = ({includeLogin}) =>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#">Stably.us</a>
+                <a className="navbar-brand" href="#">Clocksy.us</a>
             </div>
             <div id="navbar" className="navbar-collapse collapse">
                 {includeLogin ? <LoginForm /> : null}
@@ -32,7 +32,7 @@ export const Nav = ({includeLogin}) =>
 export const Jumbotron = () => 
     <div className="jumbotron">
         <div className="container">        
-            <h1>Welcome to Stably!</h1>
+            <h1>Welcome to Clocksy!</h1>
             <p>The app that keeps you on track.</p>
             <p>Our focus is YOUR focus. This program keeps track of how much time you've spent working, and motivates you with milestones.
             If you work in tech or use your computer for business, it will manage your billable hours, breaks, and much more. Create your profile below!</p>
@@ -111,6 +111,14 @@ export class RegisForm extends React.Component {
                 )
         }
 }
+
+// export class Sessions extends React.Component {
+//     render() {
+//         const Sessions = [
+
+//         ].map((title, i) => <Session key={i} title={title}/> );
+//     }
+// }
 
 export class Timer extends React.Component {
     constructor(props){
@@ -233,50 +241,58 @@ export class DashLayout extends React.Component {
         
         return <div className="sessionlog">
             {this.state.items.map(x => <p>
-                <hr />
-                Session Start: <span>{new Date(x.startTime).toLocaleString()}</span> <br /> Session End: <span>{new Date(x.endTime).toLocaleString()}</span>, <br />
-                Break Time: <span>{new Date(x.breakTime).toLocaleString()}</span>
+                Project #: <span>{new Number(x.projectId).toLocaleString()}</span> <br />
+                Session #: <span>{new Number(x.sessionId).toLocaleString()}</span> <br />
+                Session Start: <span>{new Date(x.startTime).toLocaleString()}</span> <br />
+                Session End: <span>{new Date(x.endTime).toLocaleString()}</span> <br />
+                Break Time: <span>{new Number(x.breakSeconds).toLocaleString()}</span>
             </p>)}
             <hr />
         </div>
         }
 }
-
+/* Item 1 below under "Handle your business..."
+    Embed link in "read more about benefits of tomato timer" which shows how Pomodoro works.
+*/
 export const HomeContents = () =>
     <div className="container">
         <div className="row">
             <div className="col-md-4">
-                <h2>What does Stably do?</h2>
-                <p>Stably has the potential to enhance your awareness, dexterity, and productivity while using the computer.
-                Perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
-                <p><b> Wherever you go, whatever you do with your machine, Stably can go the distance with you.</b></p>
-                <p><a className="btn btn-info" href="#" role="button">Find Out How &raquo;</a></p>
+                <h2>What does Clocksy do?</h2>
+                <p>Clocksy has the potential to enhance your productivity, or simply keep track of your screen time spent.
+                It is perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
+                <p><b> Wherever you go, whatever you do with your machine, Clocksy can go the distance with you.</b></p>
+                <p><a className="btn btn-primary btn-lg" href="#/instructions" role="button">Find Out How &raquo;</a></p>
             </div>
             
             <div className="col-md-4">
-                <h2>Schedule your energy, let us take care of your time!</h2>
-                <p>Stably has two modes of time-tracking: Pomodoro and Standard
+                <h2>Handle your business - <br/><u><b><i>not</i></b></u> how much time your business takes.</h2>
+                <p>Clocksy has two modes of time-tracking: Pomodoro and Standard.
                 <br/>
+                <br/>
+            
                 1. For short bursts or time-sensitive duties, use the Pomodoro Timer (Read the benefits of the "Tomato" technique here) allowing you to dictate your workflow.
                 <br/>
-                2. The Standard Tasktimer simply counts your minutes as long as you want it to, and suggests breaks as you go.
                 <br/>
-                <u>Both modes allow you to track billable and non-billable hours at the flip of a switch.</u></p>
-                <p><b>With every completed session, Stably learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
-                <p><a className="btn btn-info" href="#/instructions" role="button"> Get Started &raquo;</a></p>
+                2. The Standard Tasktimer simply counts your minutes as long as you want it to, and you can take breaks as you go.
+                <br/>
+                <br/>
+                <u>Standard Mode allows you to track billable and non-billable hours at the flip of a switch.</u></p>
+                <p><b>With every completed session, Clocksy learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
+                <p><a className="btn btn-warning btn-lg" href="#/login" role="button"> Get Started &raquo;</a></p>
             </div>
 
             <div className="col-md-4">
                 <h2>Conquer your Wanderlust</h2>
-                <p><b>Coming Soon:</b> Stably will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
-                <p><a className="btn btn-success" href="#" role="button">View details &raquo;</a></p>
+                <p><b>Coming Soon:</b> Clocksy will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. Stay tuned!</p>
+                <p><a className="btn btn-success btn-lg" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
 
     <hr/>
         <footer>
         <div className="footer">
-            <p>&copy; 2016 Stably. All Rights Reserved</p>
+            <p>&copy; 2016 Clocksy. All Rights Reserved</p>
         </div>
         </footer>   
  </div>
