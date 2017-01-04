@@ -28,7 +28,6 @@ export const Nav = ({includeLogin}) =>
             </div>
         </div>
     </nav>
-    // renamed the file. test test
 
 export const Jumbotron = () => 
     <div className="jumbotron">
