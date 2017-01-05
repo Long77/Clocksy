@@ -125,7 +125,7 @@ export class Timer extends React.Component {
         super(props)
 
         this.state = {
-            sessionId: 0,
+            id: 0,
             interval: null,
             breakinterval: null,
             elapsedSeconds: 0,
@@ -162,12 +162,13 @@ export class Timer extends React.Component {
             {
                 this.toggleBreak(this.state.breakinterval);
             }
+
             var now = new Date(),
                 startedAt = new Date(now - 1000*this.state.elapsedSeconds) 
 
             post('/api/session', {
                 "projectId": 1,
-                "sessionId": this.state.sessionId,
+                "id": this.state.id,
                 "name": "random session",
                 "startTime": startedAt.toISOString(),
                 "endTime": now.toISOString(),
@@ -239,11 +240,10 @@ export class DashLayout extends React.Component {
             }).catch(e => console.log(e))
     }
     render(){
-        
         return <div className="sessionlog">
             {this.state.items.map(x => <p>
                 Project #: <span>{new Number(x.projectId).toLocaleString()}</span> <br />
-                Session #: <span>{(x.sessionId)}</span> <br />
+                Session #: <span>{(x.id)}</span> <br />
                 Session Start: <span>{new Date(x.startTime).toLocaleString()}</span> <br />
                 Session End: <span>{new Date(x.endTime).toLocaleString()}</span> <br />
                 Break Time: <span>{(x.breakTime)}</span> Seconds
