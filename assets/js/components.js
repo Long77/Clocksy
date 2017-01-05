@@ -125,6 +125,7 @@ export class Timer extends React.Component {
         super(props)
 
         this.state = {
+            sessionId: 0,
             interval: null,
             breakinterval: null,
             elapsedSeconds: 0,
@@ -166,11 +167,11 @@ export class Timer extends React.Component {
 
             post('/api/session', {
                 "projectId": 1,
-                "sessionId": 1,
+                "sessionId": this.state.sessionId,
                 "name": "random session",
                 "startTime": startedAt.toISOString(),
                 "endTime": now.toISOString(),
-                "breakTime": 0
+                "breakTime": this.state.breakSeconds
             }).then(d => {
                 window.location.reload()
             })
@@ -242,10 +243,10 @@ export class DashLayout extends React.Component {
         return <div className="sessionlog">
             {this.state.items.map(x => <p>
                 Project #: <span>{new Number(x.projectId).toLocaleString()}</span> <br />
-                Session #: <span>{new Number(x.sessionId).toLocaleString()}</span> <br />
+                Session #: <span>{(x.sessionId)}</span> <br />
                 Session Start: <span>{new Date(x.startTime).toLocaleString()}</span> <br />
                 Session End: <span>{new Date(x.endTime).toLocaleString()}</span> <br />
-                Break Time: <span>{new Number(x.breakSeconds).toLocaleString()}</span>
+                Break Time: <span>{(x.breakTime)}</span> Seconds
             </p>)}
             <hr />
         </div>
@@ -285,7 +286,7 @@ export const HomeContents = () =>
             <div className="col-md-4">
                 <h2>Conquer your Wanderlust.</h2>
                 <p><b>Coming Soon:</b> Clocksy will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. When you work hard abroad, you can play hard abroad too. Stay tuned!</p>
-                <p><a className="btn btn-success btn-lg" href="#" role="button">View details &raquo;</a></p>
+                <p><a className="btn btn-success btn-lg" href="#" role="button">"Here Be Dragons..." &raquo;</a></p>
             </div>
         </div>
 
