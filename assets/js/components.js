@@ -175,6 +175,7 @@ export class Timer extends React.Component {
                 "breakTime": this.state.breakSeconds
             }).then(d => {
                 window.location.reload()
+                //leet
             })
         }
     }
