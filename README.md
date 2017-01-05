@@ -10,11 +10,11 @@ When fully complete, Clocksy will two modes of time-tracking: Standard amd User-
 
 The Pomodoro Timer is in Development, but Standard Mode is Go.
 
-1. The Standard Tasktimer simply counts your minutes as long as you want it to, and you can take breaks as you go.
+- The Standard Tasktimer simply counts your minutes as long as you want it to, and you can take breaks as you go.
 
 Standard Mode allows you to track billable and non-billable hours at the flip of a switch. The built-in Break Timer runs parallel to the main timer and subtracts from the total session time. Non-break time can be logged as billable time to submit for payment.
 
-2.  For short bursts or time-sensitive duties, the Pomodoro Timer will allow you to dictate your workflow. It will feature billable inputs as well.
+- For short bursts or time-sensitive duties, the Pomodoro Timer will allow you to dictate your workflow. It will feature billable inputs as well.
 
 What's next? 
 
