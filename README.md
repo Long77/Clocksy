@@ -6,7 +6,7 @@ Clocksy has the potential to enhance your productivity, or simply keep track of 
 
 Wherever you go, whatever you do with your machine, Clocksy can go the distance with you.
 
-When fully complete, Clocksy will two modes of time-tracking: Standard amd User-settable Pomodoro.
+When fully complete, Clocksy will two modes of time-tracking: Standard and Pomodoro.
 
 The Pomodoro Timer is in Development, but Standard Mode is Go.
 
