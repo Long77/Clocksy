@@ -175,7 +175,6 @@ export class Timer extends React.Component {
                 "breakTime": this.state.breakSeconds
             }).then(d => {
                 window.location.reload()
-                //leet
             })
         }
     }
@@ -264,7 +263,7 @@ export const HomeContents = () =>
                 <p>Clocksy has the potential to enhance your productivity, or simply keep track of your screen time spent.
                 It is perfect for typists, programmers, data analysts, number crunchers, teachers, bloggers - you name it!</p>
                 <p><b> Wherever you go, whatever you do with your machine, Clocksy can go the distance with you.</b></p>
-                <p><a className="btn btn-primary btn-lg" href="#/instructions" role="button">Find Out How &raquo;</a></p>
+                <p><a className="btn btn-warning btn-lg" href="#/instructions" role="button">Find Out How &raquo;</a></p>
             </div>
             
             <div className="col-md-4">
@@ -281,13 +280,13 @@ export const HomeContents = () =>
                 <br/>
                 <u>Standard Mode allows you to track billable and non-billable hours at the flip of a switch.</u></p>
                 <p><b>With every completed session, Clocksy learns how and when you work best. The app will suggest a schedule for you to be the most productive based on your habits!</b></p>
-                <p><a className="btn btn-warning btn-lg" href="#/login" role="button"> Get Started &raquo;</a></p>
+                <p><a className="btn btn-success btn-lg" href="#/login" role="button"> Get Started &raquo;</a></p>
             </div>
 
             <div className="col-md-4">
                 <h2>Conquer your Wanderlust.</h2>
                 <p><b>Coming Soon:</b> Clocksy will have the ability to suggest events and locales near you. We are working on bringing fresh and new activities which connect you with the local culture. When you work hard abroad, you can play hard abroad too. Stay tuned!</p>
-                <p><a className="btn btn-success btn-lg" href="#" role="button">"Here Be Dragons..." &raquo;</a></p>
+                <p><a className="btn btn-danger btn-lg" href="#" role="button">"Here Be Dragons..." &raquo;</a></p>
             </div>
         </div>
 
