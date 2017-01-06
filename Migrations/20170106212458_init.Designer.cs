@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Clocksy.Migrations
 {
     [DbContext(typeof(DB))]
-    [Migration("20170106180512_init")]
+    [Migration("20170106212458_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
